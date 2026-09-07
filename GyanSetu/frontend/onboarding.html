@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile setup | SIH26101</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./onboarding.css" />
+</head>
+<body class="onboarding-page">
+  <main class="onboarding-shell">
+    <header class="onboarding-header">
+      <div>
+        <p class="eyebrow eyebrow--blue">Profile setup</p>
+        <h1>Tell us where you are now.</h1>
+        <p>This information becomes the initial evidence used by the competency engine. You can update it later.</p>
+      </div>
+      <span class="prototype-pill prototype-pill-light">SIH26101 prototype</span>
+    </header>
+
+    <form id="onboarding-form" class="onboarding-card">
+      <section class="form-section">
+        <h2>Current work status</h2>
+        <div class="form-grid two-col">
+          <label>Employment status
+            <select id="employment-status" required>
+              <option value="">Select</option>
+              <option>Employed</option>
+              <option>Student</option>
+              <option>Job seeker</option>
+              <option>Other</option>
+            </select>
+          </label>
+          <label>Years of experience<input id="years-experience" type="number" min="0" step="0.5" /></label>
+          <label>Current job title<input id="current-job-title" /></label>
+          <label>Designation<input id="designation" /></label>
+          <label>Department<input id="department" /></label>
+          <label>Ministry / organisation<input id="organization" /></label>
+        </div>
+        <label>Current responsibilities<textarea id="current-role-summary" rows="3"></textarea></label>
+        <label>Target role / next role<textarea id="target-role" rows="2"></textarea></label>
+      </section>
+
+      <section class="form-section">
+        <div class="section-title-row"><h2>Educational background</h2><button class="ghost-button" type="button" id="add-education">+ Add</button></div>
+        <div id="education-list" class="repeat-list"></div>
+      </section>
+
+      <section class="form-section">
+        <div class="section-title-row"><h2>Work experience</h2><button class="ghost-button" type="button" id="add-experience">+ Add</button></div>
+        <div id="experience-list" class="repeat-list"></div>
+      </section>
+
+      <section class="form-section">
+        <div class="section-title-row"><h2>Courses already completed</h2><button class="ghost-button" type="button" id="add-course">+ Add</button></div>
+        <div id="course-list" class="repeat-list"></div>
+      </section>
+
+      <section class="form-section">
+        <div class="section-title-row"><h2>Skills you already use</h2><button class="ghost-button" type="button" id="add-skill">+ Add</button></div>
+        <div id="skill-list" class="repeat-list"></div>
+      </section>
+
+      <div class="onboarding-actions">
+        <div id="onboarding-status" class="status-message" role="status"></div>
+        <button class="primary-button save-profile-button" type="submit">Save profile and continue</button>
+      </div>
+    </form>
+  </main>
+  <script src="./onboarding.js"></script>
+</body>
+</html>

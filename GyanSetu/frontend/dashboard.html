@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | SIH26101</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./onboarding.css" />
+</head>
+<body class="onboarding-page">
+  <main class="onboarding-shell">
+    <header class="onboarding-header">
+      <div>
+        <p class="eyebrow eyebrow--blue">SIH26101</p>
+        <h1>Your profile is ready.</h1>
+        <p id="dashboard-copy">Loading your profile…</p>
+      </div>
+      <button id="logout-button" class="ghost-button" type="button">Log out</button>
+    </header>
+    <section class="onboarding-card">
+      <h2>Next system layer</h2>
+      <p>This is the handoff point for the competency engine, skill-gap analysis, course recommendations, assessments and readiness dashboard.</p>
+      <pre id="profile-preview" style="white-space:pre-wrap;overflow:auto;background:#f7f9fc;padding:16px;border-radius:12px"></pre>
+    </section>
+  </main>
+  <script>
+    const preview = document.querySelector('#profile-preview');
+    const copy = document.querySelector('#dashboard-copy');
+    (async () => {
+      const response = await fetch('/api/profile');
+      if (response.status === 401) return location.assign('/login.html');
+      const data = await response.json();
+      if (!response.ok) { copy.textContent = data.error || 'Could not load profile.'; return; }
+      copy.textContent = `Signed in as ${data.user.full_name || data.user.email}.`;
+      preview.textContent = JSON.stringify(data, null, 2);
+    })();
+    document.querySelector('#logout-button').addEventListener('click', async () => {
+      await fetch('/api/auth/logout', { method: 'POST' });
+      location.assign('/login.html');
+    });
+  </script>
+</body>
+</html>

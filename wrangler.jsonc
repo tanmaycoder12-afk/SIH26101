@@ -1,0 +1,12 @@
+{
+  "name": "sih26101",
+  "main": "./src/worker.js",
+  "compatibility_date": "2026-08-28",
+  "vars": {
+    "AUTH_FROM_EMAIL": "GyanSetu <onboarding@resend.dev>"
+  },
+  "assets": {
+    "directory": "./GyanSetu/frontend",
+    "binding": "ASSETS"
+  }
+}

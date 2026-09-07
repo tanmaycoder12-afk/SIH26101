@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Create a GyanSetu SIH26101 prototype account through the two-step registration flow." />
+  <title>Register | GyanSetu</title>
+  <link rel="stylesheet" href="./ui/gyansetu-components.css" />
+  <link rel="stylesheet" href="./ui/gyansetu-auth.css" />
+</head>
+<body class="gs-auth-page" data-register-step="1">
+  <main class="gs-auth-layout">
+    <div class="gs-auth-ornament" aria-hidden="true"></div>
+    <div class="gs-auth-flora gs-auth-flora--left" aria-hidden="true"><svg viewBox="0 0 160 340"><path d="M12 330C35 250 28 170 46 95M45 94c-20-12-29-30-28-48 18 6 30 22 30 44M46 121c27-16 47-16 61-2-18 18-39 24-61 16M36 180c-18-8-28-22-30-42 19 2 31 14 36 35M31 232c28-14 49-13 64 2-20 17-41 21-64 12"/></svg></div>
+    <div class="gs-auth-flora gs-auth-flora--right" aria-hidden="true"><svg viewBox="0 0 160 340"><path d="M12 330C35 250 28 170 46 95M45 94c-20-12-29-30-28-48 18 6 30 22 30 44M46 121c27-16 47-16 61-2-18 18-39 24-61 16M36 180c-18-8-28-22-30-42 19 2 31 14 36 35M31 232c28-14 49-13 64 2-20 17-41 21-64 12"/></svg></div>
+
+    <section class="gs-auth-story" aria-label="GyanSetu registration guide">
+      <div class="gs-story-inner">
+        <a class="gs-brand-lockup" href="./index.html" aria-label="GyanSetu home">
+          <img class="gs-brand-mark" src="./ui/gyansetu-logo.svg" alt="GyanSetu bridge and learning mark" />
+          <span class="gs-brand-name">GyanSetu</span>
+        </a>
+        <div class="gs-brand-divider" aria-hidden="true"><svg><use href="./ui/gyansetu-icons.svg#icon-cap"/></svg></div>
+        <p class="gs-oss-line">For India’s Official Statistical System</p>
+
+        <div id="register-story-step-one" class="gs-guide-card">
+          <h2 class="gs-guide-title">How to register?</h2>
+          <div class="gs-flow-steps" aria-label="Registration steps">
+            <div class="gs-flow-step">
+              <span class="gs-flow-icon"><svg><use href="./ui/gyansetu-icons.svg#icon-org"/></svg></span>
+              <span class="gs-flow-number">1</span>
+              <strong>Organisation Details</strong>
+              <small>Select your organisation and designation</small>
+            </div>
+            <div class="gs-flow-step">
+              <span class="gs-flow-icon"><svg><use href="./ui/gyansetu-icons.svg#icon-mail"/></svg></span>
+              <span class="gs-flow-number">2</span>
+              <strong>Verify Email</strong>
+              <small>Enter your employee email address</small>
+            </div>
+            <div class="gs-flow-step">
+              <span class="gs-flow-icon"><svg><use href="./ui/gyansetu-icons.svg#icon-shield"/></svg></span>
+              <span class="gs-flow-number">3</span>
+              <strong>OTP Verification</strong>
+              <small>Confirm the code sent to your inbox</small>
+            </div>
+            <div class="gs-flow-step">
+              <span class="gs-flow-icon"><svg><use href="./ui/gyansetu-icons.svg#icon-register"/></svg></span>
+              <span class="gs-flow-number">4</span>
+              <strong>Complete Profile</strong>
+              <small>Finish account details and continue</small>
+            </div>
+          </div>
+          <div class="gs-info-strip">
+            <svg aria-hidden="true"><use href="./ui/gyansetu-icons.svg#icon-info"/></svg>
+            <span>The SIH26101 prototype models a MoSPI-focused registration path. It does not connect to an official government identity system.</span>
+          </div>
+        </div>
+
+        <div id="register-story-step-two" class="gs-journey-card" hidden>
+          <h2>You’re Almost There!</h2>
+          <p>Complete your details to create your GyanSetu account and begin your personalized learning journey.</p>
+          <div class="gs-journey-visual" aria-hidden="true">
+            <div class="gs-profile-card"></div>
+            <div class="gs-journey-road"></div>
+            <div class="gs-bridge-art"><svg><use href="./ui/gyansetu-icons.svg#icon-bridge"/></svg></div>
+            <div class="gs-book-orb"><svg><use href="./ui/gyansetu-icons.svg#icon-book"/></svg></div>
+          </div>
+          <div class="gs-benefits">
+            <article class="gs-benefit"><svg style="color:#2465c7"><use href="./ui/gyansetu-icons.svg#icon-shield"/></svg><strong>Secure Account</strong><p>Your prototype credentials are protected.</p></article>
+            <article class="gs-benefit"><svg style="color:#209b4a"><use href="./ui/gyansetu-icons.svg#icon-user-star"/></svg><strong>Personalized Experience</strong><p>Your profile helps tailor learning recommendations.</p></article>
+            <article class="gs-benefit"><svg style="color:#f28c16"><use href="./ui/gyansetu-icons.svg#icon-target"/></svg><strong>Ready to Learn</strong><p>Continue to onboarding after registration.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gs-form-side" aria-label="GyanSetu registration form">
+      <div class="gs-form-card">
+        <div class="gs-card-bridge" aria-hidden="true"><svg><use href="./ui/gyansetu-icons.svg#icon-bridge"/></svg></div>
+        <header class="gs-form-heading">
+          <h1>Register</h1>
+          <p>Create your GyanSetu prototype account.</p>
+        </header>
+
+        <div class="gs-stepper progress-stepper" aria-label="Registration progress">
+          <div class="gs-stepper-track"><span id="progress-fill"></span></div>
+          <div class="gs-step is-active" data-progress-step="1"><span>1</span><strong>Step - 1</strong></div>
+          <div class="gs-step" data-progress-step="2"><span>2</span><strong>Step - 2</strong></div>
+        </div>
+
+        <form id="register-form" novalidate>
+          <section class="gs-register-step register-form-step is-active" data-step="1" aria-label="Organisation and email verification">
+            <div class="gs-ministry-note">
+              <svg aria-hidden="true"><use href="./ui/gyansetu-icons.svg#icon-building"/></svg>
+              <div><strong>Ministry of Statistics &amp; Programme Implementation (MoSPI)</strong><small>GyanSetu prototype access is modelled for MoSPI / Official Statistical System personnel.</small></div>
+            </div>
+
+            <label class="gs-field" for="organisation-select">
+              <span>Organisation <sup>*</sup></span>
+              <span class="gs-input-wrap"><svg aria-hidden="true"><use href="./ui/gyansetu-icons.svg#icon-org"/></svg><select id="organisation-select" required><option value="">Select organisation</option></select></span>
+            </label>
+
+            <label class="gs-field" for="designation-select">
+              <span>Designation <sup>*</sup></span>
+              <span class="gs-input-wrap"><svg aria-hidden="true"><use href="./ui/gyansetu-icons.svg#icon-id"/></svg><select id="designation-select" required><option value="">Select designation</option></select></span>
+            </label>
+
+            <label class="gs-field" for="register-email">
+              <span>Government Employee Email <sup>*</sup></span>
+              <span class="gs-input-wrap"><svg aria-hidden="true"><use href="./ui/gyansetu-icons.svg#icon-mail"/></svg><input id="register-email" type="email" autocomplete="email" placeholder="Enter your employee email address" required /></span>
+            </label>
+
+            <div class="gs-verification-box" id="email-verification-card">
+              <div class="gs-verification-box__head">
+                <svg aria-hidden="true"><use href="./ui/gyansetu-icons.svg#icon-shield"/></svg>
+                <div><strong>Email Verification</strong><p>A 6-digit one-time password will be sent to this email address.</p></div>
+              </div>
+              <div class="gs-verification-actions"><button class="gs-small-dark" id="send-otp-button" type="button"><svg aria-hidden="true"><use href="./ui/gyansetu-icons.svg#icon-send"/></svg>Send OTP</button></div>
+              <div class="gs-otp-panel" id="otp-panel" hidden>
+                <div class="gs-demo-code"><span>Email OTP</span><strong>Check inbox</strong><small id="email-verification-state">Not verified</small></div>
+                <div class="gs-otp-row"><input id="email-otp" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="Enter 6-digit OTP" /><button id="verify-otp-button" type="button">Verify</button></div>
+              </div>
+            </div>
+
+            <button class="gs-primary-dark" id="continue-step-two" type="button" disabled><span>Next</span><svg aria-hidden="true"><use href="./ui/gyansetu-icons.svg#icon-arrow"/></svg></button>
+          </section>
+
+          <section class="gs-register-step register-form-step" data-step="2" aria-label="Account details" hidden>
+            <div style="margin-bottom:-4px;color:#173e68"><strong style="font-size:13px">Step 2 of 2</strong><p style="margin:4px 0 0;color:#6e7480;font-size:11px">Tell us a bit more about yourself to complete your registration.</p></div>
+
+            <label class="gs-field" for="full-name">
+              <span>Full Name <sup>*</sup></span>
+              <span class="gs-input-wrap"><svg aria-hidden="true"><use href="./ui/gyansetu-icons.svg#icon-register"/></svg><input id="full-name" autocomplete="name" placeholder="Enter your full name" required /></span>
+            </label>
+
+            <label class="gs-field" for="employee-id">
+              <span>Employee / Personnel ID <sup>*</sup></span>
+              <span class="gs-input-wrap"><svg aria-hidden="true"><use href="./ui/gyansetu-icons.svg#icon-id"/></svg><input id="employee-id" autocomplete="off" placeholder="Enter your employee ID" required /></span>
+            </label>
+
+            <label class="gs-field" for="mobile-number">
+              <span>Mobile Number <sup>*</sup></span>
+              <span class="gs-input-wrap"><svg aria-hidden="true"><use href="./ui/gyansetu-icons.svg#icon-phone"/></svg><input id="mobile-number" inputmode="tel" autocomplete="tel" placeholder="Enter your 10-digit mobile number" required /></span>
+            </label>
+
+            <label class="gs-field" for="register-password">
+              <span>Password <sup>*</sup></span>
+              <span class="gs-input-wrap"><svg aria-hidden="true"><use href="./ui/gyansetu-icons.svg#icon-lock"/></svg><input id="register-password" type="password" autocomplete="new-password" minlength="10" placeholder="Create a strong password" required /></span>
+            </label>
+
+            <label class="gs-field" for="confirm-password">
+              <span>Confirm Password <sup>*</sup></span>
+              <span class="gs-input-wrap"><svg aria-hidden="true"><use href="./ui/gyansetu-icons.svg#icon-lock"/></svg><input id="confirm-password" type="password" autocomplete="new-password" minlength="10" placeholder="Re-enter your password" required /></span>
+            </label>
+
+            <div class="gs-security-box"><svg aria-hidden="true"><use href="./ui/gyansetu-icons.svg#icon-shield"/></svg><div><strong>Keep your account secure</strong><p>Use a strong prototype password with a mix of letters, numbers and special characters. Do not reuse an external password.</p></div></div>
+
+            <div class="gs-step-actions"><button class="gs-back-button" type="button" id="back-step-one">← Back</button><button class="gs-primary-dark" type="submit">Create Account <svg aria-hidden="true"><use href="./ui/gyansetu-icons.svg#icon-arrow"/></svg></button></div>
+          </section>
+
+          <div id="register-status" class="status-message" role="status" aria-live="polite" style="margin-top:15px"></div>
+        </form>
+
+        <p class="gs-register-foot">Already have an account? <a href="./login.html">Sign in here</a></p>
+      </div>
+    </section>
+  </main>
+  <script src="./register.js"></script>
+</body>
+</html>

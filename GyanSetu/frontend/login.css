@@ -1,0 +1,432 @@
+:root {
+  --igot-blue-950: #0c2f69;
+  --igot-blue-900: #154895;
+  --igot-blue-800: #1d59ad;
+  --igot-blue-700: #245db0;
+  --igot-orange: #ff9d12;
+  --igot-orange-soft: #ffb53f;
+  --igot-text: #20242b;
+  --igot-muted: #6e7480;
+  --igot-line: #bfc5cc;
+  --igot-danger: #b93832;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; min-width: 320px; min-height: 100%; }
+
+body.igot-login-page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  color: var(--igot-text);
+  background: #fff;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.igot-login-page button,
+.igot-login-page input { font: inherit; }
+
+.igot-login-shell {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  grid-template-columns: minmax(560px, 1.08fr) minmax(500px, .92fr);
+}
+
+/* Left instructional panel, intentionally close to iGOT's registration visual grammar. */
+.igot-login-guide {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 34px clamp(34px, 4vw, 64px) 28px;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  color: #fff;
+  background:
+    radial-gradient(circle at 50% 49%, rgba(255,166,51,.10), transparent 24%),
+    radial-gradient(circle at 48% 49%, rgba(129,169,255,.22), transparent 35%),
+    linear-gradient(150deg, #123f8a 0%, #2059b3 55%, #164a98 100%);
+  isolation: isolate;
+}
+
+.igot-pattern {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: .22;
+  background-image:
+    linear-gradient(30deg, rgba(255,255,255,.20) 12%, transparent 12.5%, transparent 87%, rgba(255,255,255,.20) 87.5%, rgba(255,255,255,.20)),
+    linear-gradient(150deg, rgba(255,255,255,.20) 12%, transparent 12.5%, transparent 87%, rgba(255,255,255,.20) 87.5%, rgba(255,255,255,.20)),
+    linear-gradient(30deg, rgba(255,255,255,.20) 12%, transparent 12.5%, transparent 87%, rgba(255,255,255,.20) 87.5%, rgba(255,255,255,.20)),
+    linear-gradient(150deg, rgba(255,255,255,.20) 12%, transparent 12.5%, transparent 87%, rgba(255,255,255,.20) 87.5%, rgba(255,255,255,.20));
+  background-size: 92px 160px;
+  background-position: 0 0, 0 0, 46px 80px, 46px 80px;
+  mask-image: linear-gradient(to bottom, #000, rgba(0,0,0,.45));
+}
+
+.igot-guide-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.igot-guide-brand {
+  min-width: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.igot-guide-mark {
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,.28);
+  border-radius: 11px;
+  background: rgba(255,255,255,.08);
+}
+
+.igot-guide-mark svg {
+  width: 28px;
+  height: 28px;
+  fill: none;
+  stroke: var(--igot-orange-soft);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.igot-guide-brand strong,
+.igot-guide-brand small { display: block; }
+.igot-guide-brand strong { font-size: 15px; line-height: 1.2; }
+.igot-guide-brand small {
+  margin-top: 3px;
+  color: rgba(255,255,255,.65);
+  font-size: 9px;
+  font-weight: 750;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.igot-prototype-pill {
+  padding: 7px 11px;
+  border: 1px solid rgba(255,255,255,.24);
+  border-radius: 999px;
+  background: rgba(255,255,255,.07);
+  color: rgba(255,255,255,.85);
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.igot-guide-stage {
+  position: relative;
+  width: min(720px, 100%);
+  min-height: 630px;
+  margin: auto;
+}
+
+.igot-guide-stage::before,
+.igot-guide-stage::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 49%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.igot-guide-stage::before {
+  width: 390px;
+  height: 390px;
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: 0 0 0 64px rgba(255,255,255,.025), 0 0 0 128px rgba(255,255,255,.018);
+}
+.igot-guide-stage::after {
+  width: 290px;
+  height: 290px;
+  background: radial-gradient(circle, rgba(255,255,255,.10), transparent 69%);
+}
+
+.igot-guide-center {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  top: 49%;
+  width: 260px;
+  height: 260px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 50%;
+  color: #214779;
+  background: #fff;
+  box-shadow: 0 22px 60px rgba(5,32,82,.28), 0 0 0 12px rgba(255,255,255,.07);
+  transform: translate(-50%, -50%);
+}
+.igot-guide-center::after {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px dashed rgba(38,91,172,.14);
+  border-radius: 50%;
+}
+.igot-guide-center span,
+.igot-guide-center strong,
+.igot-guide-center b,
+.igot-guide-center small { position: relative; z-index: 1; }
+.igot-guide-center span { color: var(--igot-orange); font-size: 13px; font-weight: 800; }
+.igot-guide-center strong { margin-top: 1px; color: var(--igot-orange); font-size: 29px; line-height: 1.03; letter-spacing: -.035em; }
+.igot-guide-center b { margin-top: 4px; color: var(--igot-orange); font-size: 31px; line-height: 1; }
+.igot-guide-center small { margin-top: 12px; color: #7f8b9f; font-size: 9px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+
+.igot-callout {
+  position: absolute;
+  z-index: 4;
+  width: 235px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.igot-callout strong { display: block; max-width: 220px; color: #fff; font-size: 14px; line-height: 1.45; font-weight: 780; }
+.igot-callout-line { width: 56px; height: 3px; margin: 10px 0 12px; border-radius: 3px; background: var(--igot-orange); }
+.igot-icon-disc {
+  width: 76px;
+  height: 76px;
+  display: grid;
+  place-items: center;
+  border: 3px solid var(--igot-orange);
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 16px 28px rgba(5,31,79,.25);
+}
+.igot-icon-disc svg { width: 37px; height: 37px; fill: none; stroke: #2c3f5a; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.igot-callout--one { left: 2%; top: 5%; }
+.igot-callout--two { right: 1%; top: 5%; }
+.igot-callout--three { left: 1%; bottom: 2%; flex-direction: column-reverse; }
+.igot-callout--four { right: 0; bottom: 2%; flex-direction: column-reverse; }
+.igot-callout--three .igot-callout-line,
+.igot-callout--four .igot-callout-line { margin: 12px 0 10px; }
+
+.igot-guide-note {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 22px minmax(0,1fr);
+  gap: 9px;
+  max-width: 670px;
+  align-items: start;
+  color: rgba(255,255,255,.66);
+  font-size: 10px;
+  line-height: 1.5;
+}
+.igot-guide-note > span {
+  width: 20px;
+  height: 20px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 50%;
+  color: #ffd289;
+  font-size: 10px;
+  font-weight: 900;
+}
+.igot-guide-note p { margin: 0; }
+.igot-guide-note strong { color: rgba(255,255,255,.90); }
+
+/* Right side: flatter, official-form style rather than a floating SaaS card. */
+.igot-login-form-panel {
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 34px clamp(42px, 5vw, 74px) 26px;
+  background: #fff;
+}
+.igot-login-form-wrap {
+  width: min(470px, 100%);
+  min-height: calc(100vh - 60px);
+  min-height: calc(100dvh - 60px);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.igot-form-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 12px;
+}
+.igot-form-topline a { color: #35536f; font-weight: 700; text-decoration: none; }
+.igot-form-topline > span { color: #7b838e; font-size: 10px; font-weight: 850; letter-spacing: .10em; }
+
+.igot-form-content { margin: auto 0; padding: 22px 0 34px; }
+.igot-form-heading > p {
+  margin: 0 0 13px;
+  color: var(--igot-blue-800);
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.igot-form-heading h1 { margin: 0; color: #1e1f23; font-size: 31px; line-height: 1.15; font-weight: 700; letter-spacing: -.025em; }
+.igot-form-heading > span { display: block; margin-top: 10px; color: #646b74; font-size: 13px; line-height: 1.55; }
+
+.igot-form { margin-top: 30px; display: grid; gap: 21px; }
+.igot-field { display: grid; gap: 8px; color: #1f2024; font-size: 13px; font-weight: 620; }
+.igot-field > span b { color: #d63830; }
+.igot-field input {
+  width: 100%;
+  height: 46px;
+  padding: 0 14px;
+  border: 1px solid #aeb4bb;
+  border-radius: 3px;
+  outline: none;
+  color: #1e2228;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 450;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+.igot-field input::placeholder { color: #969ba1; }
+.igot-field input:focus { border-color: var(--igot-blue-700); box-shadow: 0 0 0 2px rgba(36,93,176,.10); }
+
+.igot-password-wrap { position: relative; }
+.igot-password-wrap input { padding-right: 60px; }
+.igot-password-wrap button {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  padding: 7px 8px;
+  color: var(--igot-blue-700);
+  background: transparent;
+  font-size: 11px;
+  font-weight: 750;
+  cursor: pointer;
+}
+.field-error { min-height: 13px; color: var(--igot-danger); font-size: 10px; font-weight: 600; }
+
+.igot-security-note {
+  padding: 11px 12px;
+  display: grid;
+  grid-template-columns: 19px minmax(0,1fr);
+  gap: 8px;
+  border: 1px dashed #c7ccd2;
+  color: #66707d;
+  background: #fafbfc;
+}
+.igot-security-note > span {
+  width: 17px;
+  height: 17px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--igot-blue-700);
+  font-size: 9px;
+  font-weight: 900;
+}
+.igot-security-note p { margin: 0; font-size: 10.5px; line-height: 1.45; }
+
+.igot-primary-button {
+  min-height: 45px;
+  padding: 0 19px;
+  justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid #16488f;
+  border-radius: 3px;
+  color: #fff;
+  background: #2057a9;
+  box-shadow: 0 3px 7px rgba(26,65,126,.18);
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 120ms ease, transform 120ms ease;
+}
+.igot-primary-button:hover { background: #184a94; transform: translateY(-1px); }
+.igot-primary-button:disabled { opacity: .6; cursor: wait; transform: none; }
+.igot-primary-button svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+.status-message { display: none; padding: 10px 12px; border-radius: 3px; font-size: 11px; line-height: 1.45; }
+.status-message.is-visible { display: block; }
+.status-message.is-info { color: #20517d; background: #eff6ff; border: 1px solid #c8dcef; }
+.status-message.is-success { color: #236546; background: #edf8f2; border: 1px solid #c7e4d5; }
+.status-message.is-error { color: #9d352e; background: #fff1ef; border: 1px solid #efc5c0; }
+
+.igot-register-link {
+  margin-top: 23px;
+  padding-top: 17px;
+  border-top: 1px solid #e0e2e5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  color: #686f78;
+  font-size: 11.5px;
+}
+.igot-register-link a { color: var(--igot-blue-700); font-weight: 780; text-decoration: none; }
+.igot-register-link a:hover { text-decoration: underline; }
+.igot-login-footer { margin-top: auto; padding-top: 18px; color: #a0a4aa; font-size: 9px; }
+
+@media (max-width: 1120px) {
+  .igot-login-shell { grid-template-columns: minmax(500px,1fr) minmax(440px,.9fr); }
+  .igot-guide-stage { min-height: 590px; transform: scale(.92); transform-origin: center; }
+}
+
+@media (max-width: 900px) {
+  .igot-login-shell { display: block; }
+  .igot-login-guide { min-height: auto; padding: 22px 20px 24px; }
+  .igot-guide-stage { min-height: 440px; transform: scale(.78); margin: -40px auto -45px; }
+  .igot-guide-note { margin-top: 8px; }
+  .igot-login-form-panel { min-height: auto; padding: 24px 20px 30px; }
+  .igot-login-form-wrap { min-height: auto; width: min(520px,100%); }
+  .igot-form-content { margin: 0; padding: 38px 0 20px; }
+  .igot-login-footer { margin-top: 28px; }
+}
+
+@media (max-width: 620px) {
+  .igot-guide-header { align-items: flex-start; }
+  .igot-prototype-pill { display: none; }
+  .igot-guide-stage { min-height: 345px; transform: none; margin: 18px auto 6px; }
+  .igot-guide-stage::before { width: 230px; height: 230px; box-shadow: 0 0 0 38px rgba(255,255,255,.025); }
+  .igot-guide-stage::after { width: 190px; height: 190px; }
+  .igot-guide-center { width: 175px; height: 175px; padding: 18px; }
+  .igot-guide-center span { font-size: 10px; }
+  .igot-guide-center strong { font-size: 20px; }
+  .igot-guide-center b { font-size: 20px; }
+  .igot-guide-center small { margin-top: 7px; font-size: 7px; }
+  .igot-callout { width: 128px; }
+  .igot-callout strong { font-size: 9px; line-height: 1.35; }
+  .igot-callout-line { width: 35px; height: 2px; margin: 6px 0 7px; }
+  .igot-icon-disc { width: 48px; height: 48px; border-width: 2px; }
+  .igot-icon-disc svg { width: 25px; height: 25px; }
+  .igot-callout--one { left: 0; top: 0; }
+  .igot-callout--two { right: 0; top: 0; }
+  .igot-callout--three { left: 0; bottom: 0; }
+  .igot-callout--four { right: 0; bottom: 0; }
+  .igot-guide-note { font-size: 9px; }
+  .igot-login-form-panel { padding: 22px 16px 26px; }
+  .igot-form-heading h1 { font-size: 28px; }
+  .igot-form { gap: 18px; }
+  .igot-primary-button { width: 100%; justify-self: stretch; }
+  .igot-register-link { align-items: flex-start; flex-direction: column; gap: 6px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+}

@@ -1,0 +1,249 @@
+body.onboarding-page,
+body.standalone-login-page {
+  background: #fffaf3;
+}
+
+.onboarding-shell {
+  width: min(980px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 40px 0 64px;
+}
+
+.onboarding-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.onboarding-header h1,
+.auth-brand-copy h1 {
+  margin: 0;
+  color: #0c2b59;
+  font-size: clamp(30px, 5vw, 48px);
+  letter-spacing: -0.04em;
+}
+
+.onboarding-header > div > p:last-child,
+.auth-brand-copy > p:last-child {
+  max-width: 680px;
+  color: #65758b;
+  line-height: 1.65;
+}
+
+.prototype-pill-light {
+  color: #0c2b59;
+  border-color: #bfd2e7;
+  background: #edf5fc;
+}
+
+.onboarding-card,
+.standalone-login-card.onboarding-card {
+  width: 100%;
+  padding: 28px;
+  border: 1px solid #dde6ef;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 18px 50px rgba(16, 49, 88, 0.08);
+}
+
+.form-section + .form-section {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid #e8edf3;
+}
+
+.form-section h2 {
+  margin: 0 0 16px;
+  color: #183d70;
+  font-size: 18px;
+}
+
+.form-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.form-grid.two-col {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.stack-form,
+.form-section {
+  display: grid;
+  gap: 14px;
+}
+
+.stack-form label,
+.form-section label {
+  display: grid;
+  gap: 7px;
+  color: #43536b;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.stack-form input,
+.form-section input,
+.form-section select,
+.form-section textarea {
+  width: 100%;
+  min-height: 46px;
+  padding: 11px 12px;
+  border: 1px solid #d9e3ec;
+  border-radius: 10px;
+  outline: none;
+  color: #16233a;
+  background: #fff;
+  font: inherit;
+  font-weight: 500;
+}
+
+.form-section textarea {
+  min-height: 84px;
+  resize: vertical;
+}
+
+.stack-form input:focus,
+.form-section input:focus,
+.form-section select:focus,
+.form-section textarea:focus {
+  border-color: #78a8d7;
+  box-shadow: 0 0 0 4px rgba(35, 105, 180, 0.08);
+}
+
+.section-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.section-title-row h2 {
+  margin: 0;
+}
+
+.ghost-button {
+  padding: 8px 11px;
+  border: 1px solid #b9d0e7;
+  border-radius: 9px;
+  color: #18589f;
+  background: #f8fbff;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.repeat-list {
+  display: grid;
+  gap: 12px;
+}
+
+.repeat-card {
+  position: relative;
+  padding: 16px;
+  border: 1px solid #e2e9f0;
+  border-radius: 14px;
+  background: #fbfdff;
+}
+
+.remove-row {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 50%;
+  color: #8a4a45;
+  background: #fff2f1;
+  font-size: 18px;
+}
+
+.onboarding-actions {
+  margin-top: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.save-profile-button {
+  width: auto;
+  min-width: 230px;
+}
+
+.compact-auth-shell {
+  width: min(920px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 48px 0;
+  display: grid;
+  grid-template-columns: 1fr minmax(340px, 440px);
+  gap: 56px;
+  align-items: center;
+}
+
+.auth-brand-copy {
+  color: #fff;
+  padding: 34px;
+  border-radius: 24px;
+  background: linear-gradient(145deg, #0d2f61, #164c8c);
+}
+
+.auth-brand-copy h1,
+.auth-brand-copy .eyebrow {
+  color: #fff;
+}
+
+.auth-brand-copy > p:last-child {
+  color: rgba(255,255,255,.72);
+}
+
+.auth-switch,
+.form-help {
+  color: #718096;
+  font-size: 12px;
+}
+
+.auth-switch a {
+  color: #18589f;
+  font-weight: 800;
+}
+
+@media (max-width: 700px) {
+  .onboarding-shell {
+    width: min(100% - 20px, 980px);
+    padding-top: 22px;
+  }
+
+  .onboarding-header,
+  .onboarding-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .form-grid.two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .onboarding-card,
+  .standalone-login-card.onboarding-card {
+    padding: 20px 16px;
+    border-radius: 16px;
+  }
+
+  .save-profile-button {
+    width: 100%;
+  }
+
+  .compact-auth-shell {
+    width: min(100% - 20px, 520px);
+    padding: 20px 0 36px;
+    display: block;
+  }
+
+  .auth-brand-copy {
+    margin-bottom: 16px;
+    padding: 24px 20px;
+  }
+}

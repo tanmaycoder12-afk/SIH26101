@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sign in to the independent GyanSetu SIH26101 student hackathon prototype." />
+  <title>Log In | GyanSetu</title>
+  <link rel="stylesheet" href="./ui/gyansetu-components.css" />
+  <link rel="stylesheet" href="./ui/gyansetu-auth.css" />
+</head>
+<body class="gs-auth-page">
+  <main class="gs-auth-layout">
+    <div class="gs-auth-ornament" aria-hidden="true"></div>
+    <div class="gs-auth-flora gs-auth-flora--left" aria-hidden="true"><svg viewBox="0 0 160 340"><path d="M12 330C35 250 28 170 46 95M45 94c-20-12-29-30-28-48 18 6 30 22 30 44M46 121c27-16 47-16 61-2-18 18-39 24-61 16M36 180c-18-8-28-22-30-42 19 2 31 14 36 35M31 232c28-14 49-13 64 2-20 17-41 21-64 12"/></svg></div>
+    <div class="gs-auth-flora gs-auth-flora--right" aria-hidden="true"><svg viewBox="0 0 160 340"><path d="M12 330C35 250 28 170 46 95M45 94c-20-12-29-30-28-48 18 6 30 22 30 44M46 121c27-16 47-16 61-2-18 18-39 24-61 16M36 180c-18-8-28-22-30-42 19 2 31 14 36 35M31 232c28-14 49-13 64 2-20 17-41 21-64 12"/></svg></div>
+
+    <section class="gs-auth-story" aria-labelledby="login-guide-title">
+      <div class="gs-story-inner">
+        <a class="gs-brand-lockup" href="./index.html" aria-label="GyanSetu home">
+          <img class="gs-brand-mark" src="./ui/gyansetu-logo.svg" alt="GyanSetu bridge and learning mark" />
+          <span class="gs-brand-name">GyanSetu</span>
+        </a>
+        <div class="gs-brand-divider" aria-hidden="true"><svg><use href="./ui/gyansetu-icons.svg#icon-cap"/></svg></div>
+        <p class="gs-oss-line">For India’s Official Statistical System</p>
+
+        <div class="gs-guide-card">
+          <h2 class="gs-guide-title" id="login-guide-title">How to log in?</h2>
+          <div class="gs-flow-steps" aria-label="Login steps">
+            <div class="gs-flow-step">
+              <span class="gs-flow-icon"><svg><use href="./ui/gyansetu-icons.svg#icon-mail"/></svg></span>
+              <span class="gs-flow-number">1</span>
+              <strong>Enter your email</strong>
+              <small>Use the email linked to your GyanSetu demo account</small>
+            </div>
+            <div class="gs-flow-step">
+              <span class="gs-flow-icon"><svg><use href="./ui/gyansetu-icons.svg#icon-lock"/></svg></span>
+              <span class="gs-flow-number">2</span>
+              <strong>Enter password</strong>
+              <small>Use only the password created for this prototype</small>
+            </div>
+            <div class="gs-flow-step">
+              <span class="gs-flow-icon"><svg><use href="./ui/gyansetu-icons.svg#icon-login"/></svg></span>
+              <span class="gs-flow-number">3</span>
+              <strong>Click Log In</strong>
+              <small>Your credentials are checked by the backend</small>
+            </div>
+            <div class="gs-flow-step">
+              <span class="gs-flow-icon"><svg><use href="./ui/gyansetu-icons.svg#icon-dashboard"/></svg></span>
+              <span class="gs-flow-number">4</span>
+              <strong>Access dashboard</strong>
+              <small>Continue to your competency profile and learning path</small>
+            </div>
+          </div>
+          <div class="gs-info-strip">
+            <svg aria-hidden="true"><use href="./ui/gyansetu-icons.svg#icon-info"/></svg>
+            <span>Use only credentials created for this GyanSetu prototype. This is not an official Government of India authentication portal.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gs-form-side" aria-label="GyanSetu login form">
+      <div class="gs-form-card">
+        <div class="gs-card-bridge" aria-hidden="true"><svg><use href="./ui/gyansetu-icons.svg#icon-bridge"/></svg></div>
+        <header class="gs-form-heading">
+          <h1>Welcome Back!</h1>
+          <p>Sign in to continue to your GyanSetu prototype account.</p>
+        </header>
+
+        <form id="auth-form" class="gs-form" novalidate>
+          <label class="gs-field" for="identity">
+            <span>Email Address <b>*</b></span>
+            <span class="gs-input-wrap">
+              <svg aria-hidden="true"><use href="./ui/gyansetu-icons.svg#icon-mail"/></svg>
+              <input id="identity" name="identity" type="email" autocomplete="username" placeholder="Enter your email" required />
+            </span>
+            <small class="gs-field-error" id="identity-error"></small>
+          </label>
+
+          <label class="gs-field" for="password">
+            <span>Password <b>*</b></span>
+            <span class="gs-input-wrap">
+              <svg aria-hidden="true"><use href="./ui/gyansetu-icons.svg#icon-lock"/></svg>
+              <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required />
+              <button class="gs-icon-button" id="toggle-password" type="button" aria-label="Show password"><svg aria-hidden="true"><use href="./ui/gyansetu-icons.svg#icon-eye"/></svg></button>
+            </span>
+            <small class="gs-field-error" id="password-error"></small>
+          </label>
+
+          <div class="gs-inline-link"><a href="#" onclick="return false">Forgot Password?</a></div>
+
+          <button class="gs-primary-dark" id="submit-button" type="submit">
+            <svg aria-hidden="true"><use href="./ui/gyansetu-icons.svg#icon-login"/></svg>
+            <span>Log In</span>
+          </button>
+
+          <div class="status-message" id="status-message" role="status" aria-live="polite"></div>
+        </form>
+
+        <div class="gs-secondary-line"><span>Don’t have an account?</span></div>
+        <a class="gs-secondary-link" href="./register.html">Register</a>
+      </div>
+    </section>
+  </main>
+  <script src="./app.js"></script>
+</body>
+</html>

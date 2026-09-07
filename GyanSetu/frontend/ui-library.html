@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>GyanSetu UI Library</title>
+  <link rel="stylesheet" href="./ui/gyansetu-components.css"/>
+  <style>
+    body{margin:0;background:#f7f3ea;color:#182533;font-family:Inter,system-ui,sans-serif}.lib{width:min(1100px,92vw);margin:0 auto;padding:48px 0 80px}.lib h1{margin:0 0 8px;font-size:42px}.lib>p{margin:0 0 36px;color:#6e746f}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}.sample{padding:24px;border-radius:20px;background:white;box-shadow:0 12px 35px rgba(41,37,29,.08)}.sample h2{font-size:16px;margin:0 0 18px}.logo{width:190px;display:block;margin:auto}.icon-row{display:flex;gap:16px;flex-wrap:wrap}.icon{width:48px;height:48px;color:#0d4678}.swatches{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.swatch{height:62px;border-radius:14px;padding:9px;color:#fff;font-size:10px;font-weight:700}.buttons{display:grid;gap:14px}.mini-cta{min-height:58px;font-size:18px}.token{font-family:ui-monospace,monospace;font-size:11px;color:#6e746f}.wide{grid-column:1/-1}.usage{margin-top:14px;padding:12px;border-radius:10px;background:#f5f7fa;font-family:ui-monospace,monospace;font-size:11px;white-space:pre-wrap}
+  </style>
+</head>
+<body>
+  <main class="lib">
+    <h1>GyanSetu UI Stock Library</h1>
+    <p>Reusable visual primitives extracted from the approved landing-page direction. This page is the live inventory.</p>
+    <section class="grid">
+      <article class="sample"><h2>Brand mark</h2><img class="logo" src="./ui/gyansetu-logo.svg" alt="GyanSetu brand mark"/><div class="usage">./ui/gyansetu-logo.svg</div></article>
+      <article class="sample"><h2>Palette</h2><div class="swatches"><div class="swatch" style="background:#0d4678">Navy</div><div class="swatch" style="background:#f59a16">Saffron</div><div class="swatch" style="background:#0aa3ad">Teal</div><div class="swatch" style="background:#209b4a">Green</div><div class="swatch" style="background:#ff8610">Orange</div><div class="swatch" style="background:#182533">Ink</div></div></article>
+      <article class="sample"><h2>Icon sprite</h2><div class="icon-row">
+        <svg class="icon"><use href="./ui/gyansetu-icons.svg#icon-book"/></svg><svg class="icon"><use href="./ui/gyansetu-icons.svg#icon-cap"/></svg><svg class="icon"><use href="./ui/gyansetu-icons.svg#icon-chart"/></svg><svg class="icon"><use href="./ui/gyansetu-icons.svg#icon-bulb"/></svg><svg class="icon"><use href="./ui/gyansetu-icons.svg#icon-gear"/></svg><svg class="icon"><use href="./ui/gyansetu-icons.svg#icon-login"/></svg><svg class="icon"><use href="./ui/gyansetu-icons.svg#icon-register"/></svg>
+      </div><div class="usage">&lt;svg&gt;&lt;use href="./ui/gyansetu-icons.svg#icon-book"/&gt;&lt;/svg&gt;</div></article>
+      <article class="sample wide"><h2>CTA buttons</h2><div class="buttons"><a class="gs-cta mini-cta" href="#"><span class="gs-cta__icon"><svg><use href="./ui/gyansetu-icons.svg#icon-login"/></svg></span><span>Log In</span><svg class="gs-cta__arrow"><use href="./ui/gyansetu-icons.svg#icon-arrow"/></svg></a><a class="gs-cta mini-cta" href="#"><span class="gs-cta__icon"><svg><use href="./ui/gyansetu-icons.svg#icon-register"/></svg></span><span>Register</span><svg class="gs-cta__arrow"><use href="./ui/gyansetu-icons.svg#icon-arrow"/></svg></a></div><div class="usage">class="gs-cta" + gs-cta__icon + icon sprite</div></article>
+      <article class="sample"><h2>Glass card</h2><div class="gs-card"><span class="gs-badge">Prototype</span><h3>Reusable surface</h3><p class="token">.gs-card / .gs-badge</p></div></article>
+      <article class="sample"><h2>Design tokens</h2><p class="token">--gs-navy<br>--gs-saffron<br>--gs-teal<br>--gs-green<br>--gs-cream<br>--gs-shadow-soft<br>--gs-shadow-cta<br>--gs-radius-pill</p></article>
+    </section>
+  </main>
+</body>
+</html>
